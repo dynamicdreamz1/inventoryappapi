@@ -8,29 +8,10 @@ define("SHOPIFY_API_PASSWORD","0ce5daff19f7ea5595d4387204d4639a");
 define("API_DOMAIN","insectlore-staging.myshopify.com");
 define('API_URL', 'https://' . SHOPIFY_API_KEY . ':' . SHOPIFY_API_PASSWORD . '@' . API_DOMAIN . '/');
 
-$myfile = fopen("test.txt", "w") or die("Unable to open file!");
-
-fwrite($myfile, "lineA");
-
-fclose($myfile);
-
-ini_set('display_errors', 1);
-ini_set("memory_limit",-1);
-set_time_limit(0);
-
 $data = file_get_contents('php://input');
 $order = json_decode($data, true);
 
-$order_id=$order['id'];
-
-$myfile = fopen("test.txt", "w") or die("Unable to open file!");
-
-fwrite($myfile, $order_id);
-
-fclose($myfile);
-
-
-
+$order_id = $order['id'];
 if(isset($order_id)){
 
     $order_id = trim($order_id);
