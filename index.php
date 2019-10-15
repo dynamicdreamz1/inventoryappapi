@@ -8,7 +8,11 @@ define("SHOPIFY_API_PASSWORD","0ce5daff19f7ea5595d4387204d4639a");
 define("API_DOMAIN","insectlore-staging.myshopify.com");
 define('API_URL', 'https://' . SHOPIFY_API_KEY . ':' . SHOPIFY_API_PASSWORD . '@' . API_DOMAIN . '/');
 
+$myfile = fopen("test.txt", "w") or die("Unable to open file!");
 
+fwrite($myfile, "lineA");
+
+fclose($myfile);
 
 ini_set('display_errors', 1);
 ini_set("memory_limit",-1);
